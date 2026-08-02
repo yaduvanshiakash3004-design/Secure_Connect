@@ -31,7 +31,7 @@ import {
 // BACKEND
 // ======================================================
 
-const API_URL = "http://localhost:5000";
+const API_URL = "https://secure-connect-6e84.onrender.com";
 
 // ======================================================
 // DASHBOARD

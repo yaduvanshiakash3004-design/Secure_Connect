@@ -1,0 +1,184 @@
+/* ======================================================
+   SecureConnect Register Page
+   Developed By : Akash Yadav
+====================================================== */
+
+.register-page {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #f4f7fb;
+
+    font-family: Arial, sans-serif;
+}
+
+/* ======================================================
+   REGISTER CARD
+====================================================== */
+
+.register-container {
+    width: 380px;
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+    text-align: center;
+}
+
+/* ======================================================
+   LOGO
+====================================================== */
+
+.register-logo {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.register-container h1 {
+    margin: 0;
+
+    font-size: 28px;
+
+    color: #1f2937;
+}
+
+.register-subtitle {
+    margin-top: 8px;
+    margin-bottom: 30px;
+
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+/* ======================================================
+   FORM
+====================================================== */
+
+.register-container form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.register-container input {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 7px;
+
+    font-size: 14px;
+
+    box-sizing: border-box;
+
+    outline: none;
+
+    /* FIX */
+    background-color: #ffffff;
+    color: #111827;
+}
+
+.register-container input::placeholder {
+    color: #6b7280;
+}
+
+.register-container input:focus {
+    border-color: #2563eb;
+}
+/* ======================================================
+   BUTTON
+====================================================== */
+
+.register-container button {
+    width: 100%;
+
+    padding: 13px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #2563eb;
+    color: white;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.register-container button:hover {
+    background: #1d4ed8;
+}
+
+.register-container button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ======================================================
+   ERROR MESSAGE
+====================================================== */
+
+.register-message {
+    margin: 0;
+
+    padding: 10px;
+
+    border-radius: 6px;
+
+    background: #fee2e2;
+    color: #dc2626;
+
+    font-size: 13px;
+}
+
+/* ======================================================
+   LOGIN LINK
+====================================================== */
+
+.login-link {
+    margin-top: 22px;
+
+    font-size: 14px;
+
+    color: #6b7280;
+}
+
+.login-link a {
+    color: #2563eb;
+
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* ======================================================
+   MOBILE
+====================================================== */
+
+@media (max-width: 500px) {
+
+    .register-container {
+        width: 85%;
+        padding: 30px 20px;
+    }
+
+}

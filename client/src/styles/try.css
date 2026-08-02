@@ -1,0 +1,2913 @@
+/* =========================================================
+   SECURECONNECT — DASHBOARD.CSS
+   CLEAN FINAL VERSION
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #081323;
+  color: #ffffff;
+}
+
+/* =========================================================
+   DASHBOARD
+========================================================= */
+
+.dashboard {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: #081323;
+}
+
+/* =========================================================
+   TOP NAVBAR
+========================================================= */
+
+.topbar {
+  width: 100%;
+  height: 68px;
+  min-height: 68px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 30px;
+
+  flex-shrink: 0;
+
+  background: #142137;
+  border-bottom: 1px solid #26354c;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #3b82f6;
+
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.logo svg {
+  font-size: 29px;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.topbar-icon {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+
+  font-size: 19px;
+
+  cursor: pointer;
+}
+
+.notification-badge {
+  position: absolute;
+
+  top: -8px;
+  right: -8px;
+
+  min-width: 17px;
+  height: 17px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 4px;
+
+  border-radius: 20px;
+
+  background: #ef4444;
+  color: #ffffff;
+
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  color: #ffffff;
+
+  font-size: 13px;
+}
+
+.user-info svg {
+  font-size: 28px;
+}
+
+/* =========================================================
+   MAIN DASHBOARD CONTENT
+========================================================= */
+
+.dashboard-content {
+  flex: 1;
+
+  width: 100%;
+  min-height: 0;
+
+  display: grid;
+
+  /*
+     TARGET:
+     Contacts     = 20%
+     Private Chat = 25%
+     Groups       = 20%
+     Group Chat   = 35%
+  */
+
+  grid-template-columns:
+    20% 25% 20% 35%;
+
+  overflow: hidden;
+
+  background: #081323;
+}
+
+/* =========================================================
+   ALL FOUR PANELS
+========================================================= */
+
+.contacts,
+.private-chat,
+.group-list-panel,
+.group-chat {
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+  min-height: 0;
+
+  overflow: hidden;
+
+  border-right: 1px solid #26354c;
+}
+
+.group-chat {
+  border-right: none;
+}
+
+/* =========================================================
+   CONTACTS PANEL BASE
+========================================================= */
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+
+  padding: 0;
+
+  background: #081323;
+}
+
+/* =========================================================
+   PRIVATE CHAT PANEL BASE
+========================================================= */
+
+.private-chat {
+  display: flex;
+  flex-direction: column;
+
+  background: #081323;
+}
+
+/* =========================================================
+   GROUP LIST PANEL BASE
+========================================================= */
+
+.group-list-panel {
+  display: flex;
+  flex-direction: column;
+
+  background: #081323;
+}
+
+/* =========================================================
+   GROUP CHAT PANEL BASE
+========================================================= */
+
+.group-chat {
+  display: flex;
+  flex-direction: column;
+
+  background: #081323;
+}
+/* =========================================================
+   PART 2 — CONTACTS PANEL
+========================================================= */
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 0 16px;
+
+  background: #081323;
+
+  overflow: hidden;
+}
+
+/* =========================================================
+   CONTACTS TITLE
+========================================================= */
+
+.contacts h2 {
+  height: 58px;
+  min-height: 58px;
+
+  margin: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   CONTACT SEARCH
+========================================================= */
+
+.contact-search {
+  width: 100%;
+  height: 46px;
+  min-height: 46px;
+
+  margin-bottom: 16px;
+
+  padding: 0 14px;
+
+  border: none;
+  outline: none;
+
+  border-radius: 8px;
+
+  background: #1d2a3f;
+  color: #ffffff;
+
+  font-size: 12px;
+}
+
+.contact-search::placeholder {
+  color: #91a6c5;
+}
+
+/* =========================================================
+   CONTACT LIST
+========================================================= */
+
+.contact-list {
+  flex: 1;
+
+  width: 100%;
+
+  min-height: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  padding-bottom: 10px;
+}
+
+/* =========================================================
+   CONTACT CARD
+========================================================= */
+
+.contact-card {
+  position: relative;
+
+  width: 100%;
+  min-height: 74px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  padding: 10px 10px;
+
+  flex-shrink: 0;
+
+  border-radius: 8px;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.contact-card:hover {
+  background: #142137;
+}
+
+/* ACTIVE CONTACT */
+
+.contact-card.active {
+  background: #1d2a3f;
+}
+
+/* BLUE ACTIVE LINE */
+
+.contact-card.active::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+
+  width: 3px;
+
+  border-radius: 0 3px 3px 0;
+
+  background: #3b82f6;
+}
+
+/* =========================================================
+   CONTACT AVATAR
+========================================================= */
+
+.contact-avatar {
+  width: 44px;
+  height: 44px;
+
+  min-width: 44px;
+  min-height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #ef4444;
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* =========================================================
+   CONTACT INFORMATION
+========================================================= */
+
+.contact-info {
+  flex: 1;
+
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  gap: 6px;
+}
+
+.contact-info h4 {
+  width: 100%;
+
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  text-align: left;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.contact-info p {
+  width: 100%;
+
+  margin: 0;
+
+  color: #91a6c5;
+
+  font-size: 11px;
+
+  text-align: left;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* =========================================================
+   CONTACT TIME
+========================================================= */
+
+.contact-time {
+  position: absolute;
+
+  top: 13px;
+  right: 10px;
+
+  color: #7186a6;
+
+  font-size: 9px;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   UNREAD BADGE
+========================================================= */
+
+.unread-badge {
+  position: absolute;
+
+  right: 9px;
+  bottom: 12px;
+
+  min-width: 20px;
+  height: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 5px;
+
+  border-radius: 50px;
+
+  background: #22c55e;
+  color: #ffffff;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   CONTACT LIST SCROLLBAR
+========================================================= */
+
+.contact-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.contact-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.contact-list::-webkit-scrollbar-thumb {
+  background: #33445e;
+
+  border-radius: 10px;
+}
+/* =========================================================
+   PART 3 — PRIVATE CHAT
+========================================================= */
+
+.private-chat {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+  min-height: 0;
+
+  overflow: hidden;
+
+  background: #091323;
+}
+
+/* =========================================================
+   PRIVATE CHAT HEADER
+========================================================= */
+
+.chat-header {
+  width: 100%;
+  height: 68px;
+  min-height: 68px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0 14px;
+
+  flex-shrink: 0;
+
+  background: #142137;
+
+  border-bottom: 1px solid #26354c;
+}
+
+.chat-header .avatar {
+  width: 42px;
+  height: 42px;
+
+  min-width: 42px;
+  min-height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #ef4444;
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.chat-header .avatar.online {
+  background: #22c55e;
+}
+
+.chat-header .avatar.offline {
+  background: #ef4444;
+}
+
+.chat-header > div:last-child {
+  flex: 1;
+  min-width: 0;
+}
+
+.chat-header h3 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.chat-header p {
+  margin: 4px 0 0;
+
+  color: #91a6c5;
+
+  font-size: 11px;
+}
+
+/* =========================================================
+   CHAT BODY
+========================================================= */
+
+.chat-body {
+  flex: 1;
+
+  width: 100%;
+
+  min-width: 0;
+  min-height: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+
+  padding: 14px 12px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  background: #091323;
+}
+
+/* =========================================================
+   MESSAGE BUBBLE
+========================================================= */
+
+.message {
+  width: fit-content;
+
+  max-width: 78%;
+
+  padding: 8px 10px;
+
+  flex-shrink: 0;
+
+  border-radius: 8px;
+
+  color: #ffffff;
+
+  font-size: 12px;
+  line-height: 1.4;
+
+  word-break: break-word;
+
+  overflow: hidden;
+}
+
+/* RECEIVED */
+
+.message.received {
+  align-self: flex-start;
+
+  background: #1d2a3f;
+
+  border-bottom-left-radius: 3px;
+}
+
+/* SENT */
+
+.message.sent {
+  align-self: flex-end;
+
+  background: #2468e8;
+
+  border-bottom-right-radius: 3px;
+}
+
+/* =========================================================
+   MESSAGE TEXT
+========================================================= */
+
+.message-text {
+  width: 100%;
+
+  color: #ffffff;
+
+  font-size: 12px;
+
+  line-height: 1.4;
+
+  word-break: break-word;
+}
+
+/* =========================================================
+   MESSAGE TIME + READ TICKS
+========================================================= */
+
+.message-time {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 4px;
+
+  margin-top: 4px;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 8px;
+}
+
+.sent-tick,
+.read-tick {
+  font-size: 10px;
+  line-height: 1;
+}
+
+.sent-tick {
+  color: #dbeafe;
+}
+
+.read-tick {
+  color: #67e8f9;
+}
+
+/* =========================================================
+   PRIVATE IMAGE MESSAGE
+========================================================= */
+
+.message a {
+  display: block;
+
+  width: auto;
+  max-width: 100%;
+
+  overflow: hidden;
+
+  color: inherit;
+  text-decoration: none;
+}
+
+/*
+   Image bubble is intentionally smaller than normal
+   message width to match the target UI.
+*/
+
+.message:has(.message-image) {
+  width: auto;
+
+  max-width: 188px;
+
+  padding: 7px;
+}
+
+.message-image {
+  display: block;
+
+  width: 170px;
+  max-width: 100%;
+
+  height: auto;
+  max-height: 235px;
+
+  object-fit: contain;
+
+  border-radius: 6px;
+}
+
+/* =========================================================
+   FILE MESSAGE
+========================================================= */
+
+.file-message {
+  width: 100%;
+  max-width: 100%;
+
+  display: flex !important;
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 7px 8px;
+
+  overflow: hidden;
+
+  border-radius: 6px;
+
+  background: rgba(0, 0, 0, 0.15);
+
+  color: #ffffff !important;
+
+  text-decoration: none;
+}
+
+.file-message svg {
+  flex-shrink: 0;
+}
+
+.file-message span {
+  min-width: 0;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* =========================================================
+   FILE PREVIEW
+========================================================= */
+
+.file-preview {
+  width: 100%;
+  min-height: 58px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 7px 12px;
+
+  flex-shrink: 0;
+
+  background: #101d30;
+
+  border-top: 1px solid #26354c;
+}
+
+.file-preview img {
+  width: 44px;
+  height: 44px;
+
+  flex-shrink: 0;
+
+  object-fit: cover;
+
+  border-radius: 5px;
+}
+
+.file-preview span {
+  flex: 1;
+
+  min-width: 0;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  color: #ffffff;
+
+  font-size: 11px;
+}
+
+.file-preview button {
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 5px;
+
+  background: #26354c;
+  color: #ffffff;
+
+  cursor: pointer;
+}
+
+/* =========================================================
+   PRIVATE INPUT AREA
+========================================================= */
+
+.chat-input {
+  width: 100%;
+  height: 64px;
+  min-height: 64px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 10px 12px;
+
+  flex-shrink: 0;
+
+  background: #142137;
+
+  border-top: 1px solid #26354c;
+}
+
+/* =========================================================
+   ATTACH BUTTON
+========================================================= */
+
+.attach-btn {
+  width: 42px;
+  height: 42px;
+
+  min-width: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 7px;
+
+  background: #2468e8;
+  color: #ffffff;
+
+  font-size: 15px;
+
+  cursor: pointer;
+}
+
+.attach-btn:hover {
+  background: #3478f6;
+}
+
+/* =========================================================
+   MESSAGE INPUT
+========================================================= */
+
+.chat-input > input[type="text"] {
+  flex: 1;
+
+  width: 100%;
+  min-width: 0;
+  height: 42px;
+
+  padding: 0 13px;
+
+  border: none;
+  outline: none;
+
+  border-radius: 7px;
+
+  background: #1d2a3f;
+  color: #ffffff;
+
+  font-size: 12px;
+}
+
+.chat-input > input[type="text"]::placeholder {
+  color: #91a6c5;
+}
+
+/* =========================================================
+   SEND BUTTON
+========================================================= */
+
+.chat-input > button:last-child {
+  height: 42px;
+
+  min-width: 58px;
+
+  padding: 0 13px;
+
+  border: none;
+  border-radius: 7px;
+
+  background: #2468e8;
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.chat-input > button:last-child:hover {
+  background: #3478f6;
+}
+
+.chat-input > button:last-child:disabled {
+  opacity: 0.5;
+
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   PRIVATE CHAT SCROLLBAR
+========================================================= */
+
+.chat-body::-webkit-scrollbar {
+  width: 4px;
+}
+
+.chat-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-body::-webkit-scrollbar-thumb {
+  background: #33445e;
+
+  border-radius: 10px;
+}
+/* =========================================================
+   PART 4 — GROUP LIST + GROUP CHAT
+========================================================= */
+
+/* =========================================================
+   GROUP LIST PANEL
+========================================================= */
+
+.group-list-panel {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 0 14px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  background: #081323;
+}
+
+/* =========================================================
+   GROUPS TITLE
+========================================================= */
+
+.group-list-panel h2 {
+  height: 58px;
+  min-height: 58px;
+
+  margin: 0;
+
+  display: flex;
+  align-items: center;
+
+  color: #ffffff;
+
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   GROUP SEARCH
+========================================================= */
+
+.group-list-panel .search-box {
+  width: 100%;
+  height: 46px;
+  min-height: 46px;
+
+  margin-bottom: 16px;
+
+  padding: 0 14px;
+
+  flex-shrink: 0;
+
+  border: none;
+  outline: none;
+
+  border-radius: 8px;
+
+  background: #1d2a3f;
+  color: #ffffff;
+
+  font-size: 12px;
+}
+
+.group-list-panel .search-box::placeholder {
+  color: #91a6c5;
+}
+
+/* =========================================================
+   GROUP CARD
+========================================================= */
+
+.group-card {
+  width: 100%;
+  min-height: 74px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 10px;
+
+  margin-bottom: 8px;
+
+  flex-shrink: 0;
+
+  border-radius: 8px;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  transition: background 0.15s ease;
+}
+
+.group-card:hover {
+  background: #142137;
+}
+
+.group-card.active {
+  background: #1d2a3f;
+}
+
+/* =========================================================
+   GROUP AVATAR
+========================================================= */
+
+.group-avatar {
+  width: 42px;
+  height: 42px;
+
+  min-width: 42px;
+  min-height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #2468e8;
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   GROUP INFO
+========================================================= */
+
+.group-info {
+  flex: 1;
+
+  min-width: 0;
+
+  overflow: hidden;
+}
+
+.group-name-row {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  min-width: 0;
+}
+
+.group-name-row h3 {
+  flex: 1;
+
+  min-width: 0;
+
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.group-time {
+  flex-shrink: 0;
+
+  color: #7186a5;
+
+  font-size: 8px;
+
+  white-space: nowrap;
+}
+
+.group-info p {
+  width: 100%;
+
+  margin: 7px 0 0;
+
+  color: #91a6c5;
+
+  font-size: 11px;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* =========================================================
+   GROUP CHAT
+========================================================= */
+
+.group-chat {
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+  min-height: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: #091323;
+}
+
+/* =========================================================
+   GROUP CHAT HEADER
+========================================================= */
+
+.group-chat-header {
+  width: 100%;
+  height: 68px;
+  min-height: 68px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  gap: 11px;
+
+  padding: 0 14px;
+
+  flex-shrink: 0;
+
+  background: #142137;
+
+  border-bottom: 1px solid #26354c;
+
+  text-align: left;
+}
+
+.group-chat-header .group-avatar {
+  width: 42px;
+  height: 42px;
+
+  min-width: 42px;
+  min-height: 42px;
+}
+
+.group-chat-header > div:last-child {
+  flex: 1;
+  min-width: 0;
+}
+
+.group-chat-header h3 {
+  width: 100%;
+
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  text-align: left;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.group-chat-header p {
+  margin: 4px 0 0;
+
+  color: #91a6c5;
+
+  font-size: 11px;
+
+  text-align: left;
+}
+
+/* =========================================================
+   GROUP CHAT BODY
+========================================================= */
+
+.group-chat-body {
+  flex: 1;
+
+  width: 100%;
+
+  min-width: 0;
+  min-height: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 9px;
+
+  padding: 14px 18px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  background: #091323;
+}
+
+/* =========================================================
+   GROUP MESSAGE ROW
+========================================================= */
+
+.group-message {
+  width: 100%;
+
+  display: flex;
+
+  margin: 0;
+
+  flex-shrink: 0;
+}
+
+.group-message.received {
+  justify-content: flex-start;
+}
+
+.group-message.sent {
+  justify-content: flex-end;
+}
+
+/* =========================================================
+   GROUP MESSAGE BUBBLE
+========================================================= */
+
+.group-message-content {
+  width: fit-content;
+
+  max-width: 76%;
+
+  padding: 8px 10px;
+
+  overflow: hidden;
+
+  border-radius: 8px;
+
+  color: #ffffff;
+
+  word-break: break-word;
+}
+
+.group-message.received .group-message-content {
+  background: #1d2a3f;
+
+  border-bottom-left-radius: 3px;
+}
+
+.group-message.sent .group-message-content {
+  background: #2468e8;
+
+  border-bottom-right-radius: 3px;
+}
+
+/* =========================================================
+   SENDER NAME
+========================================================= */
+
+.sender-name {
+  width: 100%;
+
+  margin-bottom: 5px;
+
+  color: #60a5fa;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* =========================================================
+   GROUP MESSAGE TEXT
+========================================================= */
+
+.group-message-text {
+  width: 100%;
+
+  color: #ffffff;
+
+  font-size: 12px;
+
+  line-height: 1.4;
+
+  word-break: break-word;
+}
+
+/* =========================================================
+   GROUP MESSAGE TIME
+========================================================= */
+
+.group-message-time {
+  width: 100%;
+
+  margin-top: 4px;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 8px;
+
+  text-align: right;
+}
+
+/* =========================================================
+   GROUP IMAGE
+========================================================= */
+
+.group-message-content a {
+  display: block;
+
+  width: auto;
+  max-width: 100%;
+
+  overflow: hidden;
+
+  color: inherit;
+
+  text-decoration: none;
+}
+
+.group-message-content:has(.group-message-image) {
+  width: auto;
+
+  max-width: 300px;
+
+  padding: 7px;
+}
+
+.group-message-image {
+  display: block;
+
+  width: 280px;
+  max-width: 100%;
+
+  height: auto;
+  max-height: 220px;
+
+  object-fit: contain;
+
+  border-radius: 6px;
+}
+
+/* =========================================================
+   GROUP FILE
+========================================================= */
+
+.group-file-message {
+  width: 100%;
+  max-width: 100%;
+
+  display: flex !important;
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 7px 8px;
+
+  overflow: hidden;
+
+  border-radius: 6px;
+
+  background: rgba(0, 0, 0, 0.15);
+
+  color: #ffffff !important;
+
+  text-decoration: none;
+}
+
+.group-file-message span {
+  min-width: 0;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* =========================================================
+   GROUP FILE PREVIEW
+========================================================= */
+
+.group-file-preview {
+  width: 100%;
+  min-height: 58px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 7px 12px;
+
+  flex-shrink: 0;
+
+  background: #101d30;
+
+  border-top: 1px solid #26354c;
+}
+
+.group-file-preview img {
+  width: 44px;
+  height: 44px;
+
+  flex-shrink: 0;
+
+  object-fit: cover;
+
+  border-radius: 5px;
+}
+
+.group-file-preview span {
+  flex: 1;
+
+  min-width: 0;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  color: #ffffff;
+
+  font-size: 11px;
+}
+
+.group-file-preview button {
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 5px;
+
+  background: #26354c;
+  color: #ffffff;
+
+  cursor: pointer;
+}
+
+/* =========================================================
+   GROUP INPUT
+========================================================= */
+
+.group-input {
+  width: 100%;
+  height: 64px;
+  min-height: 64px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 10px 12px;
+
+  flex-shrink: 0;
+
+  background: #142137;
+
+  border-top: 1px solid #26354c;
+}
+
+/* ATTACH */
+
+.group-attach-btn {
+  width: 42px;
+  height: 42px;
+
+  min-width: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 7px;
+
+  background: #2468e8;
+  color: #ffffff;
+
+  font-size: 15px;
+
+  cursor: pointer;
+}
+
+.group-attach-btn:hover {
+  background: #3478f6;
+}
+
+/* TEXT INPUT */
+
+.group-input > input[type="text"] {
+  flex: 1;
+
+  width: 100%;
+  min-width: 0;
+  height: 42px;
+
+  padding: 0 13px;
+
+  border: none;
+  outline: none;
+
+  border-radius: 7px;
+
+  background: #1d2a3f;
+  color: #ffffff;
+
+  font-size: 12px;
+}
+
+.group-input > input[type="text"]::placeholder {
+  color: #91a6c5;
+}
+
+/* SEND */
+
+.group-input > button:last-child {
+  height: 42px;
+
+  min-width: 58px;
+
+  padding: 0 13px;
+
+  border: none;
+  border-radius: 7px;
+
+  background: #2468e8;
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.group-input > button:last-child:hover {
+  background: #3478f6;
+}
+
+.group-input > button:last-child:disabled {
+  opacity: 0.5;
+
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   SCROLLBARS
+========================================================= */
+
+.group-list-panel::-webkit-scrollbar,
+.group-chat-body::-webkit-scrollbar {
+  width: 4px;
+}
+
+.group-list-panel::-webkit-scrollbar-track,
+.group-chat-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.group-list-panel::-webkit-scrollbar-thumb,
+.group-chat-body::-webkit-scrollbar-thumb {
+  background: #33445e;
+
+  border-radius: 10px;
+}
+
+/* =========================================================
+   FINAL OVERFLOW PROTECTION
+========================================================= */
+
+.private-chat img,
+.group-chat img {
+  max-width: 100%;
+}
+
+.contacts,
+.private-chat,
+.group-list-panel,
+.group-chat {
+  min-width: 0;
+}
+
+.chat-body,
+.group-chat-body {
+  min-height: 0;
+}
+/* =========================================================
+   PART 5 — PRIVATE CHAT FINAL ALIGNMENT
+========================================================= */
+
+/* Header */
+.private-chat .chat-header {
+  height: 68px;
+  min-height: 68px;
+
+  padding: 0 16px;
+
+  gap: 10px;
+}
+
+/* Chat body */
+.private-chat .chat-body {
+  padding: 14px 14px 12px;
+
+  gap: 10px;
+}
+
+/* Normal message */
+.private-chat .message {
+  max-width: 78%;
+
+  padding: 8px 10px;
+
+  font-size: 12px;
+
+  border-radius: 7px;
+}
+
+/* Received */
+.private-chat .message.received {
+  align-self: flex-start;
+}
+
+/* Sent */
+.private-chat .message.sent {
+  align-self: flex-end;
+}
+
+/* Image message container */
+.private-chat .message:has(.message-image) {
+  width: auto;
+
+  max-width: 200px;
+
+  padding: 7px;
+}
+
+/* Private image */
+.private-chat .message-image {
+  display: block;
+
+  width: 180px;
+  max-width: 100%;
+
+  height: auto;
+  max-height: 260px;
+
+  object-fit: contain;
+
+  border-radius: 5px;
+}
+
+/* Time */
+.private-chat .message-time {
+  margin-top: 3px;
+
+  font-size: 8px;
+}
+
+/* =========================================================
+   PRIVATE CHAT INPUT
+========================================================= */
+
+.private-chat .chat-input {
+  height: 64px;
+  min-height: 64px;
+
+  padding: 10px 12px;
+
+  gap: 8px;
+}
+
+.private-chat .attach-btn {
+  width: 42px;
+  height: 42px;
+
+  min-width: 42px;
+}
+
+.private-chat .chat-input > input[type="text"] {
+  height: 42px;
+
+  min-width: 0;
+
+  padding: 0 12px;
+}
+
+.private-chat .chat-input > button:last-child {
+  width: 58px;
+  min-width: 58px;
+  height: 42px;
+
+  padding: 0;
+}
+/* =========================================================
+   PART 6 — GROUP LIST FINAL ALIGNMENT
+========================================================= */
+
+/* Main groups column */
+.group-list-panel {
+  padding: 0 14px;
+
+  background: #081323;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* =========================================================
+   GROUPS HEADING
+========================================================= */
+
+.group-list-panel h2 {
+  width: 100%;
+
+  height: 58px;
+  min-height: 58px;
+
+  margin: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  padding: 0;
+
+  color: #ffffff;
+
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   GROUP SEARCH
+========================================================= */
+
+.group-list-panel .search-box {
+  width: 100%;
+  height: 46px;
+  min-height: 46px;
+
+  margin: 0 0 16px 0;
+
+  padding: 0 14px;
+
+  border: none;
+  outline: none;
+
+  border-radius: 8px;
+
+  background: #1d2a3f;
+  color: #ffffff;
+
+  font-size: 12px;
+}
+
+.group-list-panel .search-box::placeholder {
+  color: #91a6c5;
+}
+
+/* =========================================================
+   GROUP CARD
+========================================================= */
+
+.group-list-panel .group-card {
+  position: relative;
+
+  width: 100%;
+  min-height: 74px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  margin: 0 0 8px 0;
+
+  padding: 10px;
+
+  border-radius: 8px;
+
+  background: transparent;
+
+  overflow: hidden;
+
+  cursor: pointer;
+}
+
+.group-list-panel .group-card:hover {
+  background: #142137;
+}
+
+.group-list-panel .group-card.active {
+  background: #1d2a3f;
+}
+
+/* =========================================================
+   GROUP AVATAR
+========================================================= */
+
+.group-list-panel .group-avatar {
+  width: 42px;
+  height: 42px;
+
+  min-width: 42px;
+  min-height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #2468e8;
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   GROUP INFO
+========================================================= */
+
+.group-list-panel .group-info {
+  flex: 1;
+
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.group-list-panel .group-name-row {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+
+  min-width: 0;
+}
+
+.group-list-panel .group-name-row h3 {
+  flex: 1;
+
+  min-width: 0;
+
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* =========================================================
+   GROUP TIME
+========================================================= */
+
+.group-list-panel .group-time {
+  flex-shrink: 0;
+
+  margin-left: auto;
+
+  color: #7186a5;
+
+  font-size: 8px;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   LAST MESSAGE
+========================================================= */
+
+.group-list-panel .group-info p {
+  width: 100%;
+
+  margin: 7px 0 0 0;
+
+  color: #91a6c5;
+
+  font-size: 11px;
+
+  text-align: left;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* =========================================================
+   GROUP COLUMN SCROLLBAR
+========================================================= */
+
+.group-list-panel::-webkit-scrollbar {
+  width: 4px;
+}
+
+.group-list-panel::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.group-list-panel::-webkit-scrollbar-thumb {
+  background: #33445e;
+
+  border-radius: 10px;
+}
+/* =========================================================
+   PART 7 — RIGHT GROUP CHAT FINAL
+========================================================= */
+
+.group-chat {
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+  min-height: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: #091323;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.group-chat .group-chat-header {
+  width: 100%;
+  height: 68px;
+  min-height: 68px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  padding: 0 14px;
+
+  flex-shrink: 0;
+
+  background: #142137;
+
+  border-bottom: 1px solid #26354c;
+}
+
+.group-chat .group-chat-header .group-avatar {
+  width: 42px;
+  height: 42px;
+
+  min-width: 42px;
+  min-height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #2468e8;
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.group-chat .group-chat-header > div:last-child {
+  flex: 1;
+  min-width: 0;
+}
+
+.group-chat .group-chat-header h3 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  text-align: left;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.group-chat .group-chat-header p {
+  margin: 4px 0 0;
+
+  color: #91a6c5;
+
+  font-size: 11px;
+
+  text-align: left;
+}
+
+/* =========================================================
+   BODY
+========================================================= */
+
+.group-chat .group-chat-body {
+  flex: 1;
+
+  width: 100%;
+
+  min-width: 0;
+  min-height: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+
+  padding: 14px 18px 12px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  background: #091323;
+}
+
+/* =========================================================
+   MESSAGE ROW
+========================================================= */
+
+.group-chat .group-message {
+  width: 100%;
+
+  display: flex;
+
+  flex-shrink: 0;
+}
+
+.group-chat .group-message.received {
+  justify-content: flex-start;
+}
+
+.group-chat .group-message.sent {
+  justify-content: flex-end;
+}
+
+/* =========================================================
+   MESSAGE BUBBLE
+========================================================= */
+
+.group-chat .group-message-content {
+  width: fit-content;
+
+  max-width: 72%;
+
+  padding: 8px 10px;
+
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  color: #ffffff;
+
+  font-size: 12px;
+  line-height: 1.4;
+
+  word-break: break-word;
+}
+
+.group-chat
+.group-message.received
+.group-message-content {
+  background: #1d2a3f;
+
+  border-bottom-left-radius: 3px;
+}
+
+.group-chat
+.group-message.sent
+.group-message-content {
+  background: #2468e8;
+
+  border-bottom-right-radius: 3px;
+}
+
+/* =========================================================
+   SENDER NAME
+========================================================= */
+
+.group-chat .sender-name {
+  width: 100%;
+
+  margin: 0 0 5px;
+
+  color: #60a5fa;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  text-align: left;
+}
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+.group-chat .group-message-text {
+  color: #ffffff;
+
+  font-size: 12px;
+
+  line-height: 1.4;
+
+  text-align: left;
+
+  word-break: break-word;
+}
+
+/* =========================================================
+   TIME
+========================================================= */
+
+.group-chat .group-message-time {
+  width: 100%;
+
+  margin-top: 4px;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 8px;
+
+  text-align: right;
+}
+
+/* =========================================================
+   GROUP IMAGE MESSAGE
+========================================================= */
+
+.group-chat
+.group-message-content:has(.group-message-image) {
+  width: auto;
+
+  max-width: 300px;
+
+  padding: 7px;
+}
+
+.group-chat .group-message-image {
+  display: block;
+
+  width: 280px;
+  max-width: 100%;
+
+  height: auto;
+  max-height: 220px;
+
+  object-fit: contain;
+
+  border-radius: 6px;
+}
+
+/* Prevent image link from becoming huge */
+
+.group-chat .group-message-content a {
+  display: block;
+
+  width: auto;
+  max-width: 100%;
+
+  overflow: hidden;
+
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =========================================================
+   BOTTOM INPUT AREA
+========================================================= */
+
+.group-chat .group-input {
+  width: 100%;
+  height: 64px;
+  min-height: 64px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 10px 12px;
+
+  flex-shrink: 0;
+
+  background: #142137;
+
+  border-top: 1px solid #26354c;
+}
+
+/* ATTACH */
+
+.group-chat .group-attach-btn {
+  width: 42px;
+  height: 42px;
+
+  min-width: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  flex-shrink: 0;
+
+  border: none;
+  border-radius: 7px;
+
+  background: #2468e8;
+  color: #ffffff;
+
+  cursor: pointer;
+}
+
+/* INPUT */
+
+.group-chat
+.group-input
+> input[type="text"] {
+  flex: 1;
+
+  width: 100%;
+  min-width: 0;
+  height: 42px;
+
+  padding: 0 13px;
+
+  border: none;
+  outline: none;
+
+  border-radius: 7px;
+
+  background: #1d2a3f;
+  color: #ffffff;
+
+  font-size: 12px;
+}
+
+.group-chat
+.group-input
+> input[type="text"]::placeholder {
+  color: #91a6c5;
+}
+
+/* SEND */
+
+.group-chat
+.group-input
+> button:last-child {
+  width: 58px;
+  min-width: 58px;
+  height: 42px;
+
+  padding: 0;
+
+  flex-shrink: 0;
+
+  border: none;
+  border-radius: 7px;
+
+  background: #2468e8;
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.group-chat
+.group-input
+> button:last-child:disabled {
+  opacity: 0.5;
+
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   GROUP CHAT SCROLLBAR
+========================================================= */
+
+.group-chat-body::-webkit-scrollbar {
+  width: 4px;
+}
+
+.group-chat-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.group-chat-body::-webkit-scrollbar-thumb {
+  background: #33445e;
+
+  border-radius: 10px;
+}
+/* =========================================================
+   PART 8 — FINAL DASHBOARD POLISH
+========================================================= */
+
+/* Prevent sizing problems everywhere */
+.dashboard *,
+.dashboard *::before,
+.dashboard *::after {
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   MAIN DASHBOARD
+========================================================= */
+
+.dashboard {
+  width: 100vw;
+  height: 100vh;
+
+  min-width: 1000px;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: #081323;
+  color: #ffffff;
+}
+
+/* =========================================================
+   TOP NAVBAR
+========================================================= */
+
+.dashboard .topbar {
+  width: 100%;
+  height: 68px;
+  min-height: 68px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 30px;
+
+  flex-shrink: 0;
+
+  background: #142137;
+
+  border-bottom: 1px solid #26354c;
+}
+
+/* Logo section */
+.dashboard .logo {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  color: #3b82f6;
+
+  font-size: 26px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+/* Right navbar */
+.dashboard .topbar-right {
+  display: flex;
+  align-items: center;
+
+  gap: 22px;
+
+  height: 100%;
+}
+
+/* Icons */
+.dashboard .topbar-right svg {
+  flex-shrink: 0;
+
+  cursor: pointer;
+}
+
+/* =========================================================
+   MAIN FOUR COLUMN AREA
+========================================================= */
+
+.dashboard-content {
+  flex: 1;
+
+  width: 100%;
+
+  min-height: 0;
+
+  display: grid;
+
+  /*
+     Contacts      = 20%
+     Private Chat  = 25%
+     Groups        = 20%
+     Group Chat    = remaining 35%
+  */
+  grid-template-columns:
+    minmax(230px, 20%)
+    minmax(300px, 25%)
+    minmax(230px, 20%)
+    minmax(360px, 35%);
+
+  overflow: hidden;
+
+  background: #081323;
+}
+
+/* =========================================================
+   ALL FOUR COLUMNS
+========================================================= */
+
+.contacts,
+.private-chat,
+.group-list-panel,
+.group-chat {
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+  min-height: 0;
+
+  overflow: hidden;
+}
+
+/* Vertical separators */
+.contacts,
+.private-chat,
+.group-list-panel {
+  border-right: 1px solid #26354c;
+}
+
+/* =========================================================
+   CONTACTS COLUMN
+========================================================= */
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+
+  padding: 0 14px;
+
+  background: #081323;
+}
+
+.contacts h2 {
+  height: 58px;
+  min-height: 58px;
+
+  margin: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Contact search */
+.contacts .search-box {
+  width: 100%;
+  height: 46px;
+  min-height: 46px;
+
+  margin: 0 0 16px;
+
+  padding: 0 14px;
+
+  border: none;
+  outline: none;
+
+  border-radius: 8px;
+
+  background: #1d2a3f;
+  color: #ffffff;
+
+  font-size: 12px;
+}
+
+.contacts .search-box::placeholder {
+  color: #91a6c5;
+}
+
+/* =========================================================
+   CONTACT CARD
+========================================================= */
+
+.contact-card {
+  width: 100%;
+  min-height: 74px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  padding: 10px;
+
+  margin-bottom: 8px;
+
+  flex-shrink: 0;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  overflow: hidden;
+}
+
+.contact-card:hover {
+  background: #142137;
+}
+
+.contact-card.active {
+  position: relative;
+
+  background: #1d2a3f;
+}
+
+/* Active blue indicator */
+.contact-card.active::before {
+  content: "";
+
+  position: absolute;
+
+  top: 8px;
+  bottom: 8px;
+  left: 0;
+
+  width: 3px;
+
+  border-radius: 3px;
+
+  background: #3b82f6;
+}
+
+/* Contact avatar */
+.contact-avatar {
+  width: 42px;
+  height: 42px;
+
+  min-width: 42px;
+  min-height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Contact information */
+.contact-info {
+  flex: 1;
+
+  min-width: 0;
+
+  overflow: hidden;
+}
+
+.contact-info h3 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.contact-info p {
+  margin: 7px 0 0;
+
+  color: #91a6c5;
+
+  font-size: 11px;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* =========================================================
+   PRIVATE + GROUP CHAT COMMON HEADER
+========================================================= */
+
+.private-chat .chat-header,
+.group-chat .group-chat-header {
+  height: 68px;
+  min-height: 68px;
+
+  flex-shrink: 0;
+
+  background: #142137;
+
+  border-bottom: 1px solid #26354c;
+}
+
+/* =========================================================
+   MESSAGE BODY COMMON
+========================================================= */
+
+.private-chat .chat-body,
+.group-chat .group-chat-body {
+  flex: 1;
+
+  min-height: 0;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* =========================================================
+   BOTTOM INPUT COMMON ALIGNMENT
+========================================================= */
+
+.private-chat .chat-input,
+.group-chat .group-input {
+  width: 100%;
+
+  height: 64px;
+  min-height: 64px;
+
+  flex-shrink: 0;
+
+  background: #142137;
+
+  border-top: 1px solid #26354c;
+}
+
+/* =========================================================
+   BUTTON CONSISTENCY
+========================================================= */
+
+.private-chat .attach-btn,
+.group-chat .group-attach-btn,
+.private-chat .chat-input > button:last-child,
+.group-chat .group-input > button:last-child {
+  transition:
+    background 0.15s ease,
+    opacity 0.15s ease,
+    transform 0.1s ease;
+}
+
+.private-chat .attach-btn:active,
+.group-chat .group-attach-btn:active,
+.private-chat .chat-input > button:last-child:active,
+.group-chat .group-input > button:last-child:active {
+  transform: scale(0.97);
+}
+
+/* =========================================================
+   IMAGE SAFETY
+========================================================= */
+
+.private-chat img,
+.group-chat img {
+  max-width: 100%;
+}
+
+/* Private image remains portrait-friendly */
+.private-chat .message-image {
+  object-fit: contain;
+}
+
+/* Group image remains landscape-friendly */
+.group-chat .group-message-image {
+  object-fit: contain;
+}
+
+/* =========================================================
+   SCROLLBAR CONSISTENCY
+========================================================= */
+
+.contacts::-webkit-scrollbar,
+.chat-body::-webkit-scrollbar,
+.group-list-panel::-webkit-scrollbar,
+.group-chat-body::-webkit-scrollbar {
+  width: 4px;
+}
+
+.contacts::-webkit-scrollbar-track,
+.chat-body::-webkit-scrollbar-track,
+.group-list-panel::-webkit-scrollbar-track,
+.group-chat-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.contacts::-webkit-scrollbar-thumb,
+.chat-body::-webkit-scrollbar-thumb,
+.group-list-panel::-webkit-scrollbar-thumb,
+.group-chat-body::-webkit-scrollbar-thumb {
+  background: #33445e;
+
+  border-radius: 10px;
+}
+
+/* =========================================================
+   REMOVE ACCIDENTAL HORIZONTAL SCROLL
+========================================================= */
+
+.private-chat,
+.group-chat,
+.chat-body,
+.group-chat-body,
+.group-list-panel,
+.contacts {
+  overflow-x: hidden;
+}
+
+/* =========================================================
+   TEXT SELECTION / INPUT FIX
+========================================================= */
+
+input,
+button {
+  font-family: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* =========================================================
+   FINAL HEIGHT PROTECTION
+========================================================= */
+
+.private-chat,
+.group-chat {
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-body,
+.group-chat-body {
+  flex: 1;
+  min-height: 0;
+}
+
+.chat-input,
+.group-input {
+  margin-top: auto;
+}

@@ -788,38 +788,38 @@ const handleConnect = () => {
     // ONLINE USERS
     // ==================================================
 
-  const handleOnlineUsers = (
-  userIds
-) => {
+  const handleOnlineUsers = (userIds) => {
   console.log(
     "ONLINE USERS RECEIVED:",
     userIds
   );
-console.log(
-  "SELECTED USER ID:",
-  selectedUser?.id
-);
 
-console.log(
-  "CURRENT USER ID:",
-  currentUserId
-);
+  console.log(
+    "SELECTED USER ID:",
+    selectedUser?._id ||
+      selectedUser?.id
+  );
+
+  console.log(
+    "CURRENT USER ID:",
+    currentUserId
+  );
+
   const normalizedUserIds = (
     userIds || []
-  ).map((id) =>
-    String(id)
-  );
+  ).map((id) => String(id));
 
   console.log(
     "NORMALIZED ONLINE USERS:",
     normalizedUserIds
   );
 
-// SAVE ONLINE USERS IN STATE
-setOnlineUsers(
-  normalizedUserIds
-);
+  // SAVE ONLINE USERS IN STATE
+  setOnlineUsers(
+    normalizedUserIds
+  );
 
+  // UPDATE CONTACT ONLINE STATUS
   setContacts(
     (previousContacts) =>
       previousContacts.map(
@@ -828,7 +828,10 @@ setOnlineUsers(
 
           status:
             normalizedUserIds.includes(
-              String(person.id)
+              String(
+                person._id ||
+                person.id
+              )
             )
               ? "online"
               : "offline",
@@ -836,6 +839,7 @@ setOnlineUsers(
       )
   );
 
+  // UPDATE CURRENTLY SELECTED USER STATUS
   setSelectedUser(
     (previousSelected) => {
       if (!previousSelected) {
@@ -848,6 +852,7 @@ setOnlineUsers(
         status:
           normalizedUserIds.includes(
             String(
+              previousSelected._id ||
               previousSelected.id
             )
           )
@@ -1009,7 +1014,20 @@ const handlePrivateReadReceipt = (data) => {
       console.log(
         "Real-time private message:",
         savedMessage
-      );
+      );console.log(
+  "PRIVATE MESSAGE DEBUG:",
+  {
+    currentUserId,
+    selectedUser,
+    selectedUserId:
+      selectedUser?._id ||
+      selectedUser?.id,
+    messageSender:
+      savedMessage?.sender,
+    messageReceiver:
+      savedMessage?.receiver,
+  }
+);
 
       const senderId =
         typeof savedMessage.sender ===
@@ -1022,13 +1040,27 @@ const handlePrivateReadReceipt = (data) => {
         "object"
           ? savedMessage.receiver._id
           : savedMessage.receiver;
+const normalizedReceiverId =
+  receiverId?.toString();
 
-      if (
-        receiverId !== currentUserId
-      ) {
-        return;
-      }
+const normalizedCurrentUserId =
+  currentUserId?.toString();
 
+if (
+  normalizedReceiverId !==
+  normalizedCurrentUserId
+) {
+  console.log(
+    "MESSAGE REJECTED:",
+    {
+      normalizedReceiverId,
+      normalizedCurrentUserId,
+    }
+  );
+
+  return;
+}
+     
       // Stop typing indicator as soon as
       // the actual message arrives.
       setPrivateTypingUser(
@@ -1079,8 +1111,10 @@ const handlePrivateReadReceipt = (data) => {
   (currentSelectedUser) => {
     if (
       currentSelectedUser &&
-      String(currentSelectedUser.id) ===
-        String(senderId)
+      String(
+  currentSelectedUser._id ||
+  currentSelectedUser.id
+) === String(senderId)
     ) {
       // ==============================================
       // ADD REAL-TIME MESSAGE TO OPEN CHAT
@@ -1127,10 +1161,11 @@ const handlePrivateReadReceipt = (data) => {
           previousContacts.map(
             (person) => {
               if (
-                person.id !== senderId
-              ) {
-                return person;
-              }
+  String(person._id || person.id) !==
+  String(senderId)
+) {
+  return person;
+}
 
               return {
                 ...person,
@@ -1160,8 +1195,9 @@ const handlePrivateReadReceipt = (data) => {
           const isChatOpen =
             currentSelectedUser &&
             String(
-              currentSelectedUser.id
-            ) === String(senderId);
+  currentSelectedUser._id ||
+  currentSelectedUser.id
+) === String(senderId);
 
           // Increase unread only when
           // sender's chat is NOT currently open.

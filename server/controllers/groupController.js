@@ -834,7 +834,7 @@ const sendGroupMessage = async (
             // ==================================================
 
             fileUrl =
-                `http://localhost:5000/uploads/${uploadedFile.filename}`;
+               `https://secure-connect-6e84.onrender.com/uploads/${uploadedFile.filename}`;
 
             // ==================================================
             // IMAGE OR DOCUMENT
